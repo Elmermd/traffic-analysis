@@ -45,6 +45,7 @@ Architecture Overview
 
 The project is organized using a **data lake–style layered architecture**:
 
+```text
 data/
 ├── raw/                         # Raw extracted data (as-is)
 │   ├── traffic/
@@ -69,6 +70,7 @@ src/                             # Data extraction, transformation and integrati
 ├── extract/                     # Data extraction scripts
 ├── transform/                   # Data cleaning and transformation scripts
 └── integrate/                   # Data integration and curation scripts
+``` 
 
 
 Although the project runs on a local filesystem, the use of:
