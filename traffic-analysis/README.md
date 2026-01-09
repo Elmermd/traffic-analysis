@@ -45,7 +45,31 @@ Architecture Overview
 
 The project is organized using a **data lake–style layered architecture**:
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   data/  ├── raw/            # Raw extracted data (as-is)  │   ├── traffic/  │   ├── stations/  │   ├── weather/  │   └── incidents/  │  ├── processed/      # Cleaned and standardized datasets  │   ├── traffic/  │   ├── stations/  │   ├── weather/  │   └── incidents/  │  ├── curated/        # Fully integrated datasets ready for analytics  │    ├── incidents_geospatial/  │    ├── traffic_enriched/  │    ├── traffic_weather_enriched/  │    └── traffic_weather_incidents/  │  ├── src/            # Processing of data  │   ├── airflow/  │   ├── extract/  │   ├── transform/  │   └── incidents/   `
+data/
+├── raw/                         # Raw extracted data (as-is)
+│   ├── traffic/
+│   ├── stations/
+│   ├── weather/
+│   └── incidents/
+│
+├── processed/                   # Cleaned and standardized datasets
+│   ├── traffic/
+│   ├── stations/
+│   ├── weather/
+│   └── incidents/
+│
+├── curated/                     # Fully integrated datasets ready for analytics
+│   ├── incidents_geospatial/
+│   ├── traffic_enriched/
+│   ├── traffic_weather_enriched/
+│   └── traffic_weather_incidents/
+│
+src/                             # Data extraction, transformation and integration
+├── airflow/                     # Airflow DAGs and orchestration logic
+├── extract/                     # Data extraction scripts
+├── transform/                   # Data cleaning and transformation scripts
+└── integrate/                   # Data integration and curation scripts
+
 
 Although the project runs on a local filesystem, the use of:
 
